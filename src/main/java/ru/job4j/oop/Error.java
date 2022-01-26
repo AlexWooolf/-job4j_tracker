@@ -17,7 +17,7 @@ public class Error {
         this.message = message;
     }
 
-    public void PrintInfo() {
+    public void printInfo() {
         System.out.println(active);
         System.out.println(status);
         System.out.println(message);
@@ -26,8 +26,8 @@ public class Error {
     public static void main(String[] args) {
         Error first = new Error(true, 2, "Pipetz");
         Error second = new Error(false, 0, "Ok");
-        first.PrintInfo();
-        second.PrintInfo();
+        first.printInfo();
+        second.printInfo();
     }
 }
 
