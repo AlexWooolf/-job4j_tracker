@@ -5,10 +5,12 @@ public class Programmer extends Engineer {
     private String lang;
 
     public Programmer(String name, String surname, String education, String birthday, int grade, String lang) {
-        super();
+        super(name, surname, education, birthday, grade);
         this.lang = lang;
     }
 
-    public Project code(Problem problem) {
+    public String code() {
+        String code = null;
+        return code;
     }
 }
