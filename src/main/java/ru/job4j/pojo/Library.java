@@ -13,11 +13,20 @@ public class Library {
         books[2] = karenina;
         books[3] = clean;
         for (int i = 0; i < books.length; i++) {
-            System.out.println();
+            Book out = books[i];
+            System.out.println(out.getName() + " " + out.getCount());
+        }
+            Book temp = books[0];
+            books[0] = books[3];
+            books[3] = temp;
+        for (int i = 0; i < books.length; i++) {
+            Book out = books[i];
+            System.out.println(out.getName() + " " + out.getCount());
         }
         for (int i = 0; i < books.length; i++) {
             if (books[i].equals("Clean code")) {
-                System.out.println(books[i]);
+                Book out = books[i];
+                System.out.println(out.getName() + " " + out.getCount());
             }
         }
     }
