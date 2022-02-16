@@ -8,6 +8,6 @@ public class Exit implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        return true;
+        return false;
     }
 }
