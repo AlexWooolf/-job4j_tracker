@@ -74,12 +74,12 @@ public class StartUITest {
         assertThat(out.toString(), is(
                 "Menu:" + ln
                         + "0. Edit item" + ln
-                        + "1. Exit Program" + ln
+                        + "1. Exit program" + ln
                         + "=== Edit item ===" + ln
                         + "Заявка изменена успешно." + ln
                         + "Menu:" + ln
                         + "0. Edit item" + ln
-                        + "1. Exit Program" + ln
+                        + "1. Exit program" + ln
                         + "=== Exit Program ===" + ln
         ));
     }
@@ -101,12 +101,12 @@ public class StartUITest {
         assertThat(out.toString(), is(
                 "Menu:" + ln
                         + "0. Show all items" + ln
-                        + "1. Exit Program" + ln
+                        + "1. Exit program" + ln
                         + "=== Show all items ===" + ln
-                        + "А сюда что?" + ln
+                        + one.toString() + ln
                         + "Menu:" + ln
                         + "0. Show all items" + ln
-                        + "1. Exit Program" + ln
+                        + "1. Exit program" + ln
                         + "=== Exit Program ===" + ln
         ));
     }
@@ -118,7 +118,7 @@ public class StartUITest {
         String name = "test1";
         Item one = tracker.add(new Item("test1"));
         Input in = new StubInput(
-                new String[] {"0", name, "1"}
+                new String[] {"0", String.valueOf(one.getName()), "1"}
         );
         UserAction[] actions = new UserAction[]{
                 new FindByName(out),
@@ -129,13 +129,12 @@ public class StartUITest {
         assertThat(out.toString(), is(
                 "Menu:" + ln
                         + "0. Find item by name" + ln
-                        + "1. Exit Program" + ln
+                        + "1. Exit program" + ln
                         + "=== Find items by name ===" + ln
-                        + "Enter name: " + ln
-                        + "Вот результат откуда брать?" + ln
+                        + one.toString() + ln
                         + "Menu:" + ln
                         + "0. Find item by name" + ln
-                        + "1. Exit Program" + ln
+                        + "1. Exit program" + ln
                         + "=== Exit Program ===" + ln
         ));
     }
@@ -145,7 +144,6 @@ public class StartUITest {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
         Item one = tracker.add(new Item("test1"));
-        String replaceName = "New Test Name";
         Input in = new StubInput(
                 new String[] {"0", String.valueOf(one.getId()), "1"}
         );
@@ -158,13 +156,12 @@ public class StartUITest {
         assertThat(out.toString(), is(
                 "Menu:" + ln
                         + "0. Find item by id" + ln
-                        + "1. Exit Program" + ln
+                        + "1. Exit program" + ln
                         + "=== Find item by id ===" + ln
-                        + "Enter id: " + ln
-                        + "Результат" + ln
+                        + one.toString() + ln
                         + "Menu:" + ln
                         + "0. Find item by id" + ln
-                        + "1. Exit Program" + ln
+                        + "1. Exit program" + ln
                         + "=== Exit Program ===" + ln
         ));
     }
