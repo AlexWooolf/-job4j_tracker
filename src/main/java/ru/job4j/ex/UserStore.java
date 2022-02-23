@@ -3,13 +3,11 @@ package ru.job4j.ex;
 public class UserStore {
 
     public static User findUser(User[] users, String login) throws UserNotFoundException {
-        User user = users[0];
+        User user = null;
         for (User value : users) {
             if (login.equals(value.getUsername())) {
                 user = value;
                 break;
-            } else {
-                user = null;
             }
         }
         if (user == null) {
@@ -19,11 +17,10 @@ public class UserStore {
     }
 
     public static boolean validate(User user) throws UserInvalidException {
-        if (user.getUsername().length() > 3 && user.isValid()) {
-            return false;
-        } else {
+        if (user.getUsername().length() < 3 && !user.isValid()) {
             throw new UserInvalidException("Пользователь не валидный");
         }
+        return true;
     }
 
     public static void main(String[] args) {

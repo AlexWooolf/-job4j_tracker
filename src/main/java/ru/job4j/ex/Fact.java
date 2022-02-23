@@ -13,7 +13,7 @@ public class Fact {
     }
 
     public static void main(String[] args) {
-        int rsl = new Fact().calc(0);
+        int rsl = new Fact().calc(-5);
         System.out.println(rsl);
     }
 }
