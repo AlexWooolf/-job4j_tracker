@@ -13,6 +13,7 @@ public class JobSorter {
         );
         Comparator<Job> cmpPriorityName = new JobAscByPriority().thenComparing(new JobAscByName());
         Collections.sort(jobs, cmpPriorityName);
-        System.out.println(jobs);
+        int rsl = cmpPriorityName.compare(jobs.get(0), jobs.get(1));
+        System.out.println(rsl);
     }
 }
