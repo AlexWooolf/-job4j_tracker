@@ -9,7 +9,7 @@ public class StringCompare implements Comparator<String> {
     public int compare(String left, String right) {
         ArrayList<Character> leftArray = new ArrayList<>();
         ArrayList<Character> rightArray = new ArrayList<>();
-        int rsl = 0;
+        Integer rsl = 0;
         int size = Math.min(left.length(), right.length());
         for (int i = 0; i < size; i++) {
             leftArray.add(left.charAt(i));
@@ -25,11 +25,7 @@ public class StringCompare implements Comparator<String> {
             }
         }
         if (rsl == 0) {
-            if (left.length() == right.length()) {
-                rsl = 0;
-            } else {
-                rsl = left.length() > right.length() ? 1 : -1;
-            }
+            rsl = Integer.compare(left.length(), right.length());
         }
         return rsl;
     }
