@@ -10,24 +10,12 @@ public class StringCompare implements Comparator<String> {
         ArrayList<Character> leftArray = new ArrayList<>();
         ArrayList<Character> rightArray = new ArrayList<>();
         Integer rsl = 0;
-        int size = Math.min(left.length(), right.length());
-        for (int i = 0; i < size; i++) {
-            leftArray.add(left.charAt(i));
-        }
-        for (int i = 0; i < size; i++) {
-            rightArray.add(right.charAt(i));
-        }
-        for (int i = 0; i < size; i++) {
-            if ((leftArray.get(i).compareTo(rightArray.get(i))) > 0) {
-                rsl = 1;
-            } else if ((leftArray.get(i).compareTo(rightArray.get(i))) < 0) {
-                rsl = -1;
+        for (int i = 0; i < Math.min(left.length(), right.length()); i++) {
+            if (left.charAt(i) != right.charAt(i)) {
+                return Character.compare(left.charAt(i), right.charAt(i));
             }
         }
-        if (rsl == 0) {
-            rsl = Integer.compare(left.length(), right.length());
-        }
-        return rsl;
+        return Integer.compare(left.length(), right.length());
     }
 }
 
