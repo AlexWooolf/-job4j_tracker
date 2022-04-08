@@ -19,16 +19,16 @@ public class DiapasonTest {
     }
 
     @Test
-    public void whenSqrt() {
+    public void whenQuadraticFunctionThenQuadraticResults() {
         List<Double> result = Diapason.diapason(2, 4, x -> x * x + 1);
         List<Double> expected = Arrays.asList(5D, 10D);
         assertThat(result, is(expected));
     }
 
     @Test
-    public void whenExp() {
-        List<Double> result = Diapason.diapason(2, 4, x -> Math.pow(x, 3));
-        List<Double> expected = Arrays.asList(8D, 27D);
+    public void whenExponentialFunctionThenExponentialResults() {
+        List<Double> result = Diapason.diapason(2, 4, x -> Math.pow(3, x));
+        List<Double> expected = Arrays.asList(9D, 27D);
         assertThat(result, is(expected));
     }
 
