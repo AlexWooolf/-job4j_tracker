@@ -8,10 +8,9 @@ import java.util.stream.Collectors;
 public class Profiles {
 
     public static List<Address> collect(List<Profile> profiles) {
-        List<Address> rsl = profiles.stream()
-                .map(p -> p.getAddress())
+        return profiles.stream()
+                .map(Profile::getAddress)
                 .collect(Collectors.toList());
-        return rsl;
     }
 
     public static List<Address> collectSortWithoutDuplicate(List<Profile> profiles) {
