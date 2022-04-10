@@ -1,6 +1,7 @@
 package ru.job4j.stream;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -12,4 +13,14 @@ public class Profiles {
                 .collect(Collectors.toList());
         return rsl;
     }
+
+    public static List<Address> collectSortWithoutDuplicate(List<Profile> profiles) {
+        List<Address> rsl = profiles.stream()
+                .map(p -> p.getAddress())
+                .sorted(new CityComparator())
+                .distinct()
+                .collect(Collectors.toList());
+        return rsl;
+    }
+
 }
