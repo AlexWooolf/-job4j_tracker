@@ -11,12 +11,12 @@ public class MatrixToListTest {
     @Test
     public void whenInputSquareMatrix() {
         Integer[][] matrix = {
-                {1, 2, 3},
+                {2, 2, 3},
                 {4, 5, 6},
                 {7, 8, 9}
         };
         List<Integer> result = MatrixToList.convert(matrix);
-        List<Integer> expected = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        List<Integer> expected = Arrays.asList(2, 2, 3, 4, 5, 6, 7, 8, 9);
         assertEquals(expected, result);
     }
 
