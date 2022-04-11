@@ -9,9 +9,7 @@ import java.util.stream.Collectors;
 public class ListToMap {
 
     public static Map<String, Student> convert(List<Student> list) {
-        Map<String, Student> rsl;
-        rsl = list.stream()
+        return list.stream()
                 .collect(Collectors.toMap(Student::getSurname, e -> e, (e, a) -> e));
-        return rsl;
     }
 }
