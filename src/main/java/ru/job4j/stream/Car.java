@@ -75,7 +75,7 @@ public class Car {
                 .buildBrand("Audi")
                 .buildModel("A4")
                 .buildColor("white")
-                .buildVolume(3)
+                .buildVolume(2)
                 .build();
         System.out.println(car2);
     }
