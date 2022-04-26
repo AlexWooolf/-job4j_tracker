@@ -16,6 +16,11 @@ public class Tuple implements Comparable<Tuple> {
     }
 
     @Override
+    public String toString() {
+        return "Tuple{" + "name='" + name + '\'' + ", score=" + score + '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;

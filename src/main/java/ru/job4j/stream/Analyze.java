@@ -51,4 +51,26 @@ public class Analyze {
                 max(Tuple::compareTo).get();
 
     }
+
+    public static void main(String[] args) {
+        List<Tuple> average = Analyze.averageScoreByPupil(
+                List.of(
+                        new Pupil("Ivanov",
+                                List.of(
+                                        new Subject("Math", 100),
+                                        new Subject("Lang", 100),
+                                        new Subject("Philosophy", 100)
+                                )
+                        ),
+                        new Pupil("Petrov",
+                                List.of(
+                                        new Subject("Math", 60),
+                                        new Subject("Lang", 60),
+                                        new Subject("Philosophy", 60)
+                                )
+                        )
+                ).stream()
+        );
+        average.stream().map(Tuple::toString).forEach(System.out::println);
+    }
 }
