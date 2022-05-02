@@ -48,7 +48,7 @@ public class Analyze {
                                 .mapToInt(Subject::getScore).sum()
                         )
                 )
-                .max(Comparator.comparingDouble(Tuple::getScore)).get();
+                .max(Comparator.comparingDouble(Tuple::getScore)).orElse(null);
     }
 
     public static Tuple bestSubject(Stream<Pupil> stream) {
