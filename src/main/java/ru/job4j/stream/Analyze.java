@@ -57,14 +57,13 @@ public class Analyze {
                 .collect(
                         Collectors.groupingBy(
                                 Subject::getName,
-                                LinkedHashMap::new,
                                 Collectors.summingDouble(Subject::getScore)
                         )
                 )
                 .entrySet()
                 .stream()
                 .map(s -> new Tuple(s.getKey(), s.getValue()))
-                .max(Comparator.comparingDouble(Tuple::getScore)).get();
+                .max(Comparator.comparingDouble(Tuple::getScore)).orElse(null);
 
     }
 }
